@@ -12,15 +12,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- NOTE: keep styling inside assets/css/style.css for design-system alignment -->
+  <style>
+    .about-card {
+      border: 2px solid #FF5E3A; 
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      padding: 30px 24px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+    
+    .about-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(255, 94, 58, 0.25);
+      background-color: #FF5E3A;
+    }
+    .about-card:hover .card-title,
+    .about-card:hover .card-text {
+      color: #ffffff !important;
+    }
+    .about-card:hover .card-icon {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+  </style>
 </head>
 
 <body>
 
   <header class="header" data-header>
     <div class="container">
-      <a href="#" class="logo">
-        Tinner<span class="logo-dot">.</span>
+      <a href="#" class="logo" style="font-size: 24px; font-weight: 800; color: #FF5E3A; text-decoration: none;">
+        Tinner<span style="color: #111827;">.</span>
       </a>
 
       <button class="menu-toggle-btn" data-nav-toggle-btn>
@@ -30,10 +53,8 @@
       <nav class="navbar">
         <ul class="navbar-list">
           <li><a href="#hero" class="navbar-link">Home</a></li>
-          <li><a href="#about" class="navbar-link">Problem</a></li>
-          <li><a href="#value" class="navbar-link">For Who</a></li>
+          <li><a href="#about" class="navbar-link">The Solution</a></li>
           <li><a href="#features" class="navbar-link">Features</a></li>
-          <li><a href="#design" class="navbar-link">Design</a></li>
           <li><a href="#tech" class="navbar-link">Tech Stack</a></li>
           <li><a href="#team" class="navbar-link">Team</a></li>
         </ul>
@@ -62,9 +83,9 @@
               <span>🍔</span> Stop arguing over dinner. Discover food visually.
             </p>
 
-            <div class="btn-group tight" style="margin-top: 20px;">
-              <a href="#features" class="btn btn-primary">View Features</a>
-              <a href="#design" class="btn btn-outline">View Design</a>
+            <div class="btn-group" style="display: flex; gap: 15px; margin-top: 20px;">
+                <a href="#features" class="btn btn-primary" style="background: #FF5E3A; border-color: #FF5E3A; text-decoration: none;">View Features</a>
+                <a href="https://github.com/pntayorange/Showcase" target="_blank" class="btn btn-outline" style="color: #FF5E3A; border-color: #FF5E3A; text-decoration: none;">View Source Code</a>
             </div>
           </div>
 
@@ -78,7 +99,7 @@
       <section class="about" id="about">
         <div class="container">
           <div class="about-content">
-            <div class="about-icon icon-brand">
+            <div class="about-icon" style="color: #FF5E3A; background: #FFF0ED;">
               <ion-icon name="warning-outline"></ion-icon>
             </div>
             <h2 class="h2 about-title">The Pain Point</h2>
@@ -90,7 +111,7 @@
           <ul class="about-list">
             <li>
               <div class="about-card">
-                <div class="card-icon icon-brand">
+                <div class="card-icon" style="color: #FF5E3A; background: #FFF0ED;">
                   <ion-icon name="phone-portrait-outline"></ion-icon>
                 </div>
                 <h3 class="h3 card-title">Single-View Interface</h3>
@@ -99,7 +120,7 @@
             </li>
             <li>
               <div class="about-card">
-                <div class="card-icon icon-brand">
+                <div class="card-icon" style="color: #FF5E3A; background: #FFF0ED;">
                   <ion-icon name="game-controller-outline"></ion-icon>
                 </div>
                 <h3 class="h3 card-title">Gamified Experience</h3>
@@ -107,39 +128,6 @@
               </div>
             </li>
           </ul>
-        </div>
-      </section>
-
-      <section class="value-prop" id="value">
-        <div class="container">
-          <h2 class="h2 section-title">Target Users & Value Proposition</h2>
-          <p class="section-text">
-            A landing page summary of who Tinner is for, what problem it solves, and why it matters.
-          </p>
-
-          <div class="value-grid">
-            <div class="value-card">
-              <p class="value-card-title">Target users</p>
-              <p class="value-card-text">
-                - People ordering food with friends/partners who struggle to agree quickly.<br>
-                - Busy students & office workers who want a faster, more visual way to decide.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <p class="value-card-title">Value proposition</p>
-              <p class="value-card-text">
-                Decide what to eat in under 5 minutes using a swipe-first, single-item experience that reduces choice overload and decision fatigue.
-              </p>
-            </div>
-
-            <div class="value-card">
-              <p class="value-card-title">MVP scope (what we ship first)</p>
-              <p class="value-card-text">
-                Swipe-to-like/pass, instant restaurant match reveal, and visual restaurant info cards for confident final selection.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -155,7 +143,7 @@
               <img src="./assets/images/features-img-1.png" alt="Swipe to Match Screenshot">
             </figure>
             <div class="features-content">
-              <p class="features-content-subtitle text-brand">
+              <p class="features-content-subtitle" style="color: #FF5E3A;">
                 <ion-icon name="star-outline"></ion-icon><span>FEATURE 1</span>
               </p>
               <h3 class="features-content-title"><strong>Swipe-to-Match</strong> Logic.</h3>
@@ -168,7 +156,7 @@
               <img src="./assets/images/features-img-2.png" alt="Restaurant Info Screenshot">
             </figure>
             <div class="features-content">
-              <p class="features-content-subtitle text-brand">
+              <p class="features-content-subtitle" style="color: #FF5E3A;">
                 <ion-icon name="restaurant-outline"></ion-icon><span>FEATURE 2</span>
               </p>
               <h3 class="features-content-title">Visual <strong>Restaurant Info</strong> Cards.</h3>
@@ -176,36 +164,6 @@
             </div>
           </div>
 
-        </div>
-      </section>
-
-      <section class="design" id="design">
-        <div class="container">
-          <h2 class="h2 section-title">Selected Screens & Design Elements</h2>
-          <p class="section-text">
-            A quick visual tour of key screens and UI components from the prototype and MVP build.
-          </p>
-
-          <div class="design-grid">
-            <div class="design-shot">
-              <img src="./assets/images/hero-banner.png" alt="Tinner hero mockup">
-              <div class="caption">Hero mockup overview</div>
-            </div>
-            <div class="design-shot">
-              <img src="./assets/images/features-img-1.png" alt="Swipe-to-match screen">
-              <div class="caption">Swipe-to-match screen</div>
-            </div>
-            <div class="design-shot">
-              <img src="./assets/images/features-img-2.png" alt="Restaurant info card screen">
-              <div class="caption">Restaurant info card screen</div>
-            </div>
-          </div>
-
-          <div class="resource-links" aria-label="Design resources">
-            <a class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">Behance Case Study (add link)</a>
-            <a class="btn btn-outline" href="#" target="_blank" rel="noopener noreferrer">Figma Prototype (add link)</a>
-            <a class="btn btn-outline" href="https://github.com/pntayorange/Showcase" target="_blank" rel="noopener noreferrer">Source Code</a>
-          </div>
         </div>
       </section>
 
@@ -242,17 +200,27 @@
       </section>
 
 
-      <section class="team" id="team">
+      <section class="contact" id="team" style="background-color: #FFF0ED; padding: 80px 0;">
         <div class="container">
-          <h2 class="h2 section-title">Team Members</h2>
-          <p class="section-text">CO3043-PTAD Project Development Team</p>
+          <h2 class="h2 section-title" style="text-align: center;">Team Members</h2>
+          <p class="section-text" style="text-align: center; margin-bottom: 40px;">CO3043-PTAD Project Development Team</p>
           
-          <div class="team-grid">
-            <div class="team-member">Phan Đình Khang</div>
-            <div class="team-member">Âu Nguyễn Mạnh Hùng</div>
-            <div class="team-member">Phạm Ngọc Tây</div>
-            <div class="team-member">Trương Thanh Nhân</div>
-            <div class="team-member">Nguyễn Tiến Nam</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; display: flex; align-items: center; justify-content: center;">
+                <strong style="color: #111827; font-size: 18px;">Phan Đình Khang</strong>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; display: flex; align-items: center; justify-content: center;">
+                <strong style="color: #111827; font-size: 18px;">Âu Nguyễn Mạnh Hùng</strong>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; display: flex; align-items: center; justify-content: center;">
+                <strong style="color: #111827; font-size: 18px;">Phạm Ngọc Tây</strong>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; display: flex; align-items: center; justify-content: center;">
+                <strong style="color: #111827; font-size: 18px;">Trương Thanh Nhân</strong>
+            </div>
+            <div style="background: white; padding: 24px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; display: flex; align-items: center; justify-content: center;">
+                <strong style="color: #111827; font-size: 18px;">Nguyễn Tiến Nam</strong>
+            </div>
           </div>
         </div>
       </section>
@@ -265,8 +233,8 @@
       <div class="container">
         
         <div class="footer-brand">
-          <a href="#" class="logo">
-            Tinner<span class="logo-dot">.</span>
+          <a href="#" class="logo" style="font-size: 28px; font-weight: 800; color: #FF5E3A; text-decoration: none;">
+            Tinner<span style="color: #ffffff;">.</span>
           </a>
           <p class="footer-text">
             Curing Analysis Paralysis in food discovery, one swipe at a time. A UI/UX Concept & Development Project.
@@ -277,10 +245,10 @@
               <a href="https://github.com/pntayorange/Showcase" target="_blank" class="social-link"><ion-icon name="logo-github"></ion-icon></a>
             </li>
             <li>
-              <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Behance (add link)"><ion-icon name="logo-behance"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-behance"></ion-icon></a>
             </li>
             <li>
-              <a href="#" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Figma (add link)"><ion-icon name="logo-figma"></ion-icon></a>
+              <a href="#" class="social-link"><ion-icon name="logo-figma"></ion-icon></a>
             </li>
           </ul>
         </div>
@@ -289,17 +257,14 @@
           <ul class="footer-list">
             <li><p class="footer-item-title">PROJECT</p></li>
             <li><a href="#hero" class="footer-link">Home</a></li>
-            <li><a href="#about" class="footer-link">Problem</a></li>
-            <li><a href="#value" class="footer-link">Target Users</a></li>
+            <li><a href="#about" class="footer-link">The Solution</a></li>
             <li><a href="#features" class="footer-link">MVP Features</a></li>
-            <li><a href="#design" class="footer-link">Design</a></li>
           </ul>
 
           <ul class="footer-list">
             <li><p class="footer-item-title">RESOURCES</p></li>
             <li><a href="https://github.com/L02-Ch-a-tay-dau/Tinner/wiki" target="_blank" class="footer-link">Project Wiki</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">Figma Prototype (add link)</a></li>
-            <li><a href="#" target="_blank" rel="noopener noreferrer" class="footer-link">Behance Case Study (add link)</a></li>
+            <li><a href="#" class="footer-link">Figma Prototype</a></li>
           </ul>
 
           <ul class="footer-list">
